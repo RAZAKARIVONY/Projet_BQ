@@ -21,10 +21,12 @@ Créez une base de données MySQL avec le nom springbootdbet ajoutez les informa
 
 Les informations par défaut sont :
 
+``` 
 spring.datasource.diver-class-name =com.mysql.cj.jdbc.Driver
 spring.datasource.url = jdbc:mysql://localhost:3306/User_Data?createDatabaseIfNotExist=true
 spring.datasource.username = root
 spring.datasource.password = 
+```
 
 # Usage
 Exécutez le projet via l'IDE et accédez à http://localhost:8080
