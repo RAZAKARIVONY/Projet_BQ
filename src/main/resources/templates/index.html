@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+</head>
+
+<style type="text/css">
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h2 {
+text-align: center;
+}
+
+a {
+ background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+
+}
+
+table,
+th,
+td {
+text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+   margin-top: 20px;
+  
+  
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+td {
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.highlight {
+  background-color: #ff0;
+}
+
+section {
+  
+    background-color: white;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+</style>
+
+
+<body>
+    <h2>List de produit</h2>
+    
+    <section>
+        <a type="button" href="/showNewProductForm">Add New Product</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="product : ${listProducts}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
+            <td>
+                <a th:href="@{/showFormForUpdate/{id}(id=${product.id})}">Edit</a> |
+                <a th:href="@{/deleteProduct/{id}(id=${product.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    
+    </section>
+    
+
+</body>
+</html>
