@@ -4,6 +4,4 @@ Qu'y a-t-il à l'intérieur
 Ce projet est basé sur le projet Spring Boot et utilise ces packages :
 Maven
 Spring Core
-Spring Data (Hibernate & MySQL)
-Spring MVC (Tomcat)
-Thymleaf
+Thymeleaf
